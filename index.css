@@ -1,5 +1,6 @@
 #main-content {
     display: flex;
+    font-size: large;
 }
 
 #attacker {
@@ -8,10 +9,17 @@
     color: #ffffff;
 }
 
+#attacker > div:not(#attacker-header) {
+    margin: 5px;
+}
+
 #attacker-header {
     background-color: #f05c57;
     color: #ffffff;
     text-align: center;
+    font-size: x-large;
+    margin: 0;
+    padding: 4px;
 }
 
 #defender {
@@ -20,10 +28,17 @@
     color: #ffffff;
 }
 
+#defender > div:not(#defender-header) {
+    margin: 5px;
+}
+
 #defender-header {
     background-color: #66c2a9;
     color: #ffffff;
     text-align: center;
+    font-size: x-large;
+    margin: 0;
+    padding: 4px;
 }
 
 #viewer {
@@ -36,10 +51,13 @@
     background-color: #bcbcbc;
     color: #ffffff;
     text-align: center;
+    font-size: x-large;
+    padding: 4px;
 }
 
 #viewer input {
     background-color: #49687a;
     width: 100%;
     color: #ffffff;
+    font-size: large;
 }
