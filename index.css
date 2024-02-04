@@ -1,0 +1,45 @@
+#main-content {
+    display: flex;
+}
+
+#attacker {
+    width: 25%;
+    background-color: #7f4247;
+    color: #ffffff;
+}
+
+#attacker-header {
+    background-color: #f05c57;
+    color: #ffffff;
+    text-align: center;
+}
+
+#defender {
+    width: 25%;
+    background-color: #3f7772;
+    color: #ffffff;
+}
+
+#defender-header {
+    background-color: #66c2a9;
+    color: #ffffff;
+    text-align: center;
+}
+
+#viewer {
+    width: 50%;
+    background-color: #49687a;
+    color: #ffffff;
+}
+
+#viewer-header {
+    background-color: #bcbcbc;
+    color: #ffffff;
+    text-align: center;
+}
+
+#viewer input {
+    background-color: #49687a;
+    width: 100%;
+    color: #ffffff;
+}

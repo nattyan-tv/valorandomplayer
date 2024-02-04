@@ -1,0 +1,2 @@
+# VALORANT RANDOM PLAYER PICKER
+カスタムとかで便利かも。
