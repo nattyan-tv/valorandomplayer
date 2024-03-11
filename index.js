@@ -1,3 +1,5 @@
+const VLRNDPL = 'VLRNDPL';
+
 const clearAttacker = () => {
     for (let i = 1; i <= 5; i++) {
         document.getElementById(`attacker${i}`).innerHTML = '';
@@ -30,7 +32,7 @@ const getPlayers = () => {
     return players;
 };
 
-const main = () => {
+const shuffle = () => {
     const players = getPlayers();
     let attackers = [];
     let defenders = [];
@@ -61,3 +63,58 @@ const main = () => {
         document.getElementById(`defender${i}`).innerHTML = defenders[i - 1];
     }
 };
+
+const save = () => {
+    const players = getPlayers();
+    const profileName = document.getElementById('profile-name').value;
+    if (profileName === '' || profileName === null) {
+        alert('プロファイル名を入力してください～');
+        return;
+    }
+    localStorage.setItem(`${VLRNDPL}-${profileName}`, JSON.stringify(players));
+    reloadProfileList();
+}
+
+const load = () => {
+    const profileName = document.getElementById("profile-list").value;
+    if (profileName === '' || profileName === null) {
+        alert('プロファイル名を選択してください～');
+        return;
+    }
+    const players = JSON.parse(localStorage.getItem(`${VLRNDPL}-${profileName}`));
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`viewer${i}`).value = '';
+    }
+    for (let i = 1; i <= players.length; i++) {
+        document.getElementById(`viewer${i}`).value = players[i - 1];
+    }
+}
+
+const deleteProfile = () => {
+    const profileName = document.getElementById("profile-list").value;
+    if (profileName === '' || profileName === null) {
+        alert('プロファイル名を選択してください～');
+        return;
+    }
+    localStorage.removeItem(`${VLRNDPL}-${profileName}`);
+    reloadProfileList();
+}
+
+const reloadProfileList = () => {
+    const profileList = document.getElementById("profile-list");
+    profileList.innerHTML = '';
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.indexOf(VLRNDPL) === -1) {
+            continue;
+        }
+        const option = document.createElement('option');
+        option.value = key.split('-')[1];
+        option.innerHTML = key.split('-')[1];
+        profileList.appendChild(option);
+    }
+}
+
+window.onload = () => {
+    reloadProfileList();
+}

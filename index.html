@@ -37,7 +37,22 @@
                 <input type="text" id="viewer10"></input><br>
             </div>
         </div>
-        <button onclick="main()">シャッフル</button>
-        <button onclick="clearAll()">クリア</button>
+        <div>
+            <button onclick="shuffle()">シャッフル</button>
+            <button onclick="clearAll()">クリア</button>
+        </div>
+        <br>
+        <div id="save-load-profile">
+            <div>今のプレイヤーを保存しておく？</div>
+            <div>
+                <input type="text" id="profile-name" placeholder="プロファイル名">
+                <button onclick="save()">セーブ</button>
+            </div>
+            <div>
+                <select id="profile-list"></select>
+                <button onclick="load()">ロード</button>
+                <button onclick="deleteProfile()">削除</button>
+            </div>
+        </div>
     </body>
 </html>

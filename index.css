@@ -61,3 +61,13 @@
     color: #ffffff;
     font-size: large;
 }
+
+button {
+    padding: 4px;
+    font-size: large;
+}
+
+#save-load-profile input, select {
+    padding: 4px;
+    font-size: large;
+}
